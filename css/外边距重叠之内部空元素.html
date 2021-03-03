@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 情形 2：空的块级元素 -->
+    <!-- 解决方案之二：给父元素添加 BFC 特性 -->
+    <section>
+        <style>
+            .empty{
+                overflow: auto;
+            }
+            .empty ​​​​​​p {
+                margin: 0;
+                overflow: auto;
+            }
+
+            .empty div {
+                margin-top: 13px;
+                margin-bottom: 87px;
+            }
+        </style>
+
+        <article class="empty">
+            <p>上边界范围是 87 ...</p>
+            <div></div>
+            <p>... 上边界范围是 87</p>
+        </article>
+    </section>
+</body>
+</html>

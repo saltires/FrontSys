@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未知高度的两列布局，左侧宽度 300px，右边自适应</title>
+    <style>
+        .layout {
+            background-color: aqua;
+            /* 此种方式仅限于高度有限的元素，是一种取巧方案 */
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+        }
+
+        .left {
+            background-color: bisque;
+            float: left;
+            height: 100%;
+            text-align: center;
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+        }
+
+        .right {
+            background-color: chocolate;
+            height: 100%;
+            text-align: center;
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="left">未知高度的两列布局，左侧宽度 300px，右边自适应</div>
+        <div class="right">
+            <p>未知高度的两列布局，左侧宽度 300px，右边自适应</p>
+            <!-- p*900{未知高度的两列布局，左侧宽度 300px，右边自适应} -->
+        </div>
+    </div>
+</body>
+
+</html>

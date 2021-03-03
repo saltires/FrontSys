@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距重叠的三种情况及解决方案</title>
+</head>
+
+<body>
+    <!-- 情形 1：同一层相邻元素之间 -->
+    <section>
+        <!-- 问题：由于发生了外边距重叠，这两个 p 元素之间的间距是二者之间的最大值 87px -->
+        <!-- <style>
+            p:nth-child(1) {
+                margin-bottom: 13px;
+            }
+
+            p:nth-child(2) {
+                margin-top: 87px;
+            }
+        </style> -->
+
+        <!-- 解决方案之一：给第二个 p 元素添加左浮动 -->
+        <style>
+            .left {
+                float: left;
+            }
+
+            .neighbour{
+                overflow: hidden;
+            }
+
+            .neighbour p:nth-child(1) {
+                margin-bottom: 13px;
+            }
+
+            .neighbour p:nth-child(2) {
+                margin-top: 87px;
+            }
+        </style>
+        <article class="neighbour">
+            <p>下边界范围会...</p>
+            <p class="left">...会跟这个元素的上边界范围重叠。</p>
+        </article>
+    </section>
+</body>
+
+</html>

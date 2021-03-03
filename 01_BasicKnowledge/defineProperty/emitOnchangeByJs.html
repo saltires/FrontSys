@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript动态的改变input的value属性时，如何自动触发oninput、onchange事件？</title>
+    <title>上面的问题实际可以翻译为：改变了一个对象的属性，怎么去自动触发一个程序，或者访问一个属性，怎么去自动触发一个程序</title>
+    <title>上面的问题自然下意识的会让我们想到 Object.defineProperty</title>
+</head>
+
+<body>
+    <input type="text" id="demo">
+    <button class="change">改变 input 的值为 5</button>
+    <script>
+        const input = document.getElementById('demo')
+
+        function oninputCallback() {
+            console.log('oninput event ');
+        }
+
+        function onchangeCallback() {
+            console.log('onchange event');
+        }
+
+        input.addEventListener('oninput', oninputCallback, false);
+        input.addEventListener('onchange', onchangeCallback, false);
+
+        Object.defineProperty(input, "_value", {
+            enumerable: true,
+            configurable: true,
+            get() {
+                return this.value
+            },
+            set(newValue) {
+                this.value = newValue
+                oninputCallback()
+                onchangeCallback()
+            }
+        })
+
+        document.querySelector('.change').addEventListener('click', () => {
+            input._value = 5
+        })
+    </script>
+</body>
+
+</html>

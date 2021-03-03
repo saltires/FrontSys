@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用 flex 实现两列布局，高度未知已知都适用，左侧宽度 300 px，右边自适应</title>
+    <style>
+        .layout{
+            background-color: aqua;
+            /* height: 300px; */
+            display: flex;
+        }
+        .left{
+            background-color: bisque;
+            text-align: center;
+            width: 300px;
+        }
+        .right{
+            background-color: chocolate;
+            text-align: center;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="left">固定高度的两列布局，左侧宽度 300px，右边自适应</div>
+        <div class="right">
+            <p>固定高度的两列布局，左侧宽度 300px，右边自适应</p>
+            <p>固定高度的两列布局，左侧宽度 300px，右边自适应</p>
+            <p>固定高度的两列布局，左侧宽度 300px，右边自适应</p>
+            <p>固定高度的两列布局，左侧宽度 300px，右边自适应</p>
+            <p>固定高度的两列布局，左侧宽度 300px，右边自适应</p>
+        </div>
+    </div>
+</body>
+</html>

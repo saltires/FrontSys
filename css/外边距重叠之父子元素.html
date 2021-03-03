@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 情形 3：在元素嵌套时，当没有内容将父元素和后代元素分开时，父元素的 margin-top会和第一个子元素的 margin-top 发生重叠 -->
+    <!-- 同理，父元素的 margin-bottom会和最后一个子元素的 margin-bottom 发生重叠 -->
+    <section>
+        <!-- 解决方案之三：给父元素设置为绝对定位 -->
+        <style type="text/css">
+            article.lawer {
+                margin-top: 13px;
+                margin-bottom: 87px;
+                position: absolute;
+            }
+
+            .lawer header {
+                margin-top: 87px;
+            }
+ 
+            .lawer footer {
+                margin-bottom: 13px;
+            }
+        </style>
+
+        <article class="lawer">
+            <header>上边界重叠 87</header>
+            <footer>下边界重叠 87 不能再高了</footer>
+        </article>
+    </section>
+</body>
+</html>
