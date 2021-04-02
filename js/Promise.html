@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var promise1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(1)
+            }, 30000)
+        })
+        var promise5 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(5)
+            }, 5000)
+        })
+        var promise4 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(4)
+            }, 4000)
+        })
+        var promise2 = Promise.resolve(2)
+        var promise3 = Promise.reject('出错了')
+        Promise.allSettled([promise1, promise2, promise3]).then((data) => {
+            console.log(data);
+        }).catch(err => {
+            console.log(err);
+        })
+        Promise.race([promise1, promise4, promise5]).then(data => {
+            console.log(data)
+        }).catch(err => console.log(err)) 
+    </script>
+</body>
+</html>

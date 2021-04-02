@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function deepClone(obj) {
+            const types = Object.prototype.toString.call(obj)
+            if (types !== '[object Object]' && types !== '[object Array]') return obj
+
+            let result = types === '[object Object]' ? {} : []
+
+            for (let [key, value] of Object.entries(obj)) {
+                result[key] = deepClone(value)
+            }
+
+            return result
+        }
+
+        var foo = {
+            person: {
+                name: 'saltire'
+            },
+            age: 20
+        }
+
+        var bar = deepClone(foo)
+        bar.person.name = '123'
+        console.log(foo);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击事件中事件对象的一些坐标属性值观察</title>
+    <style>
+        .container {
+            display: table;
+            width: 100%;
+        }
+        .outer {
+            height: 300px;
+            background-color: royalblue;
+            vertical-align: middle;
+            display: table-cell;
+            text-align: center;
+        }   
+        .inner {
+            width: 100%;
+            background-color: red;
+            display: inline-block;
+            height: 100px;
+        }
+       </style>
+</head>
+<body>
+     <div class="container">
+        <div class="outer">
+            <div class="inner">
+    
+            </div>
+         </div>
+     </div>
+     <script>
+         var el = document.querySelector('.inner')
+         el.addEventListener('click', el => {
+             console.log('clientX：', el.clientX)
+             console.log('clientY', el.clientY)
+             console.log('offsetX', el.offsetX)
+             console.log('offsetY', el.offsetY)
+             console.log('pageX', el.pageX)
+             console.log('pageY', el.pageY)
+             console.log('screenX', el.screenX)
+             console.log('screenY', el.screenY)
+         })
+     </script>
+</body>
+</html>

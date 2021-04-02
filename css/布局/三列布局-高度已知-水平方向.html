@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现三列布局的多种方式 - 高度已知</title>
+    <style>
+        section {
+            margin: 20px 0;
+        }
+
+        section article {
+            height: 300px;
+        }
+
+        section article div {
+            height: 300px;
+        }
+
+        .left {
+            background-color: tomato;
+            width: 300px;
+        }
+
+        .right {
+            background-color: violet;
+            width: 300px;
+        }
+
+        .center {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1、浮动实现 -->
+    <section class="float">
+        <style>
+            .float article .left {
+                float: left;
+            }
+
+            .float article .right {
+                float: right;
+            }
+        </style>
+        <article>
+            <div class="left">
+                <p>浮动实现左右固定宽度中间自适应</p>
+                <p>浮动实现左右固定宽度中间自适应</p>
+                <p>浮动实现左右固定宽度中间自适应</p>
+            </div>
+            <div class="right">
+                <p>浮动实现左右固定宽度中间自适应</p>
+                <p>浮动实现左右固定宽度中间自适应</p>
+                <p>浮动实现左右固定宽度中间自适应</p>
+            </div>
+            <div class="center">
+                <p>浮动实现左右固定宽度中间自适应</p>
+                <p>浮动实现左右固定宽度中间自适应</p>
+                <p>浮动实现左右固定宽度中间自适应</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- 2、绝对定位实现 -->
+    <section class="position">
+        <style>
+            .position article {
+                position: relative;
+            }
+
+            .position article .left {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+            }
+
+            .position article .right {
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+            .position article .center {
+                margin: 0 300px;
+            }
+        </style>
+        <article>
+            <div class="left">
+                <p>绝对定位实现三列布局</p>
+                <p>绝对定位实现三列布局</p>
+                <p>绝对定位实现三列布局</p>
+            </div>
+            <div class="center">
+                <p>绝对定位实现三列布局</p>
+                <p>绝对定位实现三列布局</p>
+                <p>绝对定位实现三列布局</p>
+            </div>
+            <div class="right">
+                <p>绝对定位实现三列布局</p>
+                <p>绝对定位实现三列布局</p>
+                <p>绝对定位实现三列布局</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- 3、flex box 实现 -->
+    <section class="flexbox">
+        <style>
+            .flexbox article {
+                display: flex;
+            }
+            .flexbox article .center {
+                flex: 1;
+            }
+        </style>
+        <article>
+            <div class="left">
+                <p>flex box 实现三列布局</p>
+                <p>flex box 实现三列布局</p>
+                <p>flex box 实现三列布局</p>
+            </div>
+            <div class="center">
+                <p>flex box 实现三列布局</p>
+                <p>flex box 实现三列布局</p>
+                <p>flex box 实现三列布局</p>
+            </div>
+            <div class="right">
+                <p>flex box 实现三列布局</p>
+                <p>flex box 实现三列布局</p>
+                <p>flex box 实现三列布局</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- 4、表格布局实现 -->
+    <section class="table">
+        <style>
+            .table article {
+                display: table;
+                width: 100%;
+            }
+            .table article div{
+                display: table-cell;
+            }
+        </style>
+        <article>
+            <div class="left">
+                <p>表格布局实现三列布局</p>
+                <p>表格布局实现三列布局</p>
+                <p>表格布局实现三列布局</p>
+            </div>
+            <div class="center">
+                <p>表格布局实现三列布局</p>
+                <p>表格布局实现三列布局</p>
+                <p>表格布局实现三列布局</p>
+            </div>
+            <div class="right">
+                <p>表格布局实现三列布局</p>
+                <p>表格布局实现三列布局</p>
+                <p>表格布局实现三列布局</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- 5、网格布局实现三列布局 -->
+    <section class="grid">
+        <style>
+            .grid article {
+                display: grid;
+                grid-template-columns: 300px 1fr 300px;
+            }
+        </style>
+        <article>
+            <div class="left">
+                <p>网格实现三列布局</p>
+                <p>网格实现三列布局</p>
+                <p>网格实现三列布局</p>
+            </div>
+            <div class="center">
+                <p>网格实现三列布局</p>
+                <p>网格实现三列布局</p>
+                <p>网格实现三列布局</p>
+            </div>
+            <div class="right">
+                <p>网格实现三列布局</p>
+                <p>网格实现三列布局</p>
+                <p>网格实现三列布局</p>
+            </div>
+        </article>
+    </section>
+</body>
+
+</html>

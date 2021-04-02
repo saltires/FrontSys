@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置行内元素解决外边距重叠</title>
+</head>
+<body>
+    <section>
+        <style>
+            p{
+                margin: 20px 0;
+                display: inline-block;
+                width: 100%;
+            }
+            .left{
+                margin: 30px 0;
+            }
+        </style>
+        <article class="neighbour">
+            <p>下边界范围会...</p>
+            <p class="left">...会跟这个元素的上边界范围重叠。</p>
+        </article>
+    </section>
+</body>
+</html>

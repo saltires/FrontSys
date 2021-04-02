@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网格实现圣杯布局</title>
+</head>
+
+<body>
+    <section class="grid">
+        <style>
+            .grid article {
+                display: grid;
+                grid-template-columns: 200px 1fr;
+                grid-template-rows: 100px auto 200px;
+                grid-template-areas:
+                    "header header"
+                    "aside main"
+                    "footer footer";
+            }
+
+            .grid article .header {
+                background-color: red;
+                grid-area: header;
+            }
+
+            .grid article .left {
+                background-color: bisque;
+                grid-area: aside;
+            }
+
+            .grid article .right {
+                background-color: blue;
+                grid-area: main;
+            }
+
+            .grid article .footer {
+                background-color: chartreuse;
+                grid-area: footer;
+            }
+        </style>
+        <article>
+            <div class="header">
+                <p>头部区域</p>
+                <p>头部区域</p>
+                <p>头部区域</p>
+            </div>
+            <div class="left">
+                <p>左侧区域</p>
+                <p>左侧区域</p>
+                <p>左侧区域</p>
+            </div>
+            <div class="right">
+                <p>右侧区域</p>
+                <p>右侧区域</p>
+                <p>右侧区域</p>
+            </div>
+            <div class="footer">
+                <p>底部区域</p>
+                <p>底部区域</p>
+                <p>底部区域</p>
+            </div>
+        </article>
+    </section>
+</body>
+
+</html>

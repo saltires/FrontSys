@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function cached(fn) {
+            var cache = Object.create(null);
+            return function cachedFn(str) {
+                var hit = cache[str];
+                return hit || (cache[str] = fn(str))
+            }
+        }
+
+        function cached(fn) {
+            var cache = Object.create(null)
+            return function cachedFn(str) {
+                var hit = cache[str]
+                return hit || (cache[str] = fn(str))
+            }
+        }
+
+        var foo = cached((a) => {
+            return a + 'x'
+        })
+
+        console.log(foo('saltire'))
+        console.log(foo('saltire'))
+    </script>
+</body>
+
+</html>
