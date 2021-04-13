@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .transition {
+            text-decoration-line: underline;
+            text-decoration-color: transparent;
+            text-decoration-thickness: 0.1em;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .transition:hover {
+            text-decoration-color: pink;
+            text-decoration-thickness: 0.15em;
+            color: pink;
+        }
+
+        a {
+            background: linear-gradient(90deg, #ff3c41, #fc0, #0ebeff);
+            background-size: 0 3px;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            transition: 1s all;
+            color: #0cc;
+        }
+
+        a:hover {
+            background-size: 100% 3px;
+            color: #000;
+        }
+        p {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="transition">Lorem ipsum dolor</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <a>Mollitia nostrum placeat consequatur deserunt velit
+            ducimus possimus commodi temporibus debitis quam</a>, molestiae laboriosam sit repellendus sed sapiente
+        quidem quod accusantium vero.</p>
+        <p><span style="background-color: red;">dasdadasdasdasdasda<br>da</span><span style="background-color: blue;">dasdadadsasdasdadasdada</span></p>
+</body>
+
+</html>

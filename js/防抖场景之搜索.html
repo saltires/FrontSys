@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖场景之搜索</title>
+    <style>
+        body {
+            background-color: #444;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        div {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        input {
+            outline: none;
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" placeholder="请输入搜索标题">
+    </div>
+    <script>
+        const el = document.querySelector('input')
+        let counter = 1
+        function debounce(fn, delay) {
+            let timeout = null
+            return function () {
+                let argus = arguments
+                clearTimeout(timeout)
+                timeout = setTimeout(fn.bind(this, argus), delay)
+            }
+        }
+
+        function callBack(argu) {
+            let e = argu[0]
+            const { value } = e.target
+            console.log(`您搜索的最新的标题是${value}`)
+            counter++
+        }
+        el.addEventListener('input', debounce(callBack, 500))
+    </script>
+</body>
+
+</html>

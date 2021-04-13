@@ -19,4 +19,6 @@ function compileX(tpl, data) {
     console.log(string) // <p>hello，我是hugo，职业：FE<p>
 }
 
+
+
 compileX(tpl, data)

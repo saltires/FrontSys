@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖场景之登录</title>
+    <style>
+        body{
+            background-color: #444;
+        }
+        body,html{
+            height: 100%;
+        }
+        div{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button>登录</button>
+    </div>
+    <script>
+        const el = document.querySelector('button')
+        let counter = 1
+        // 防止点击登录按钮频率过快
+        function debounce(fn, delay) {
+            let timeout = null
+            return function() {
+                let argus = arguments
+                console.log('您点击频率过快了呢！')
+                clearTimeout(timeout)
+                timeout = setTimeout(fn.bind(this, argus), delay)
+            }
+        }
+        function callBack() {
+            console.log(`第 ${counter} 次点击登录按钮`)
+            counter++
+        }
+        el.addEventListener('click', debounce(callBack, 300))
+    </script>
+</body>
+</html>

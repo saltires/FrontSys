@@ -47,4 +47,4 @@ function throttle1(func, wait) {
     }
 }
 
-container.onmousemove = throttle1(getUserAction, 3000);
+container.onmousemove = debounce(getUserAction, 500);

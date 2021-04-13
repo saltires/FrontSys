@@ -6,7 +6,7 @@ const data = {
 }
 
 function compile(tpl, data) {
-    const regex = /\<%(*)%\>/g
+    const regex = /\<%(.*?)%\>/g
     const string = tpl.trim().replace(regex, function (match, $1) {
         if ($1) {
             return data[$1]
